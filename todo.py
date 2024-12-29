@@ -21,8 +21,22 @@ def add_task(tasks):
 
 
 def delete_task(tasks):
-   task = tasks.remove()
-   print(task)
+   view_task(tasks)
+   if tasks:
+        '''Try { task} except {catching an error} is to catch certain error 
+        and doing something specific to them'''
+        try: 
+            task_num =  int(input("\n Enter the task number to delete: "))
+            tasks.pop(task_num - 1)
+            print("Deletion was sucessful")
+        except (ValueError, IndexError):
+            print("Invalid number")
+
+
+  
+   
+   
+       
 
 def main() :
     tasks = []
